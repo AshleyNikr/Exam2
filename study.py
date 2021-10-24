@@ -31,7 +31,12 @@ def even_letters(filename):
         for line in file:
             line = line.strip()
             lines += line
-        print(lines[::2], end="")
+        # print(lines[::2], end="")
+        lines = re.findall('[a-zA-Z]+[a-zA-Z]*', lines)
+        lines2 = ""
+        for i in range(len(lines)):
+            lines2 += lines[i]
+        print(lines2[::2])
 
 def average_words(filename):
     with open(filename) as file:
@@ -54,10 +59,11 @@ def field_count(csv_filename):
         return count
 
 if __name__ == "__main__":
-    # filename = "alice.txt"
+    filename = "alice.txt"
     # open_file(filename)
     # print(odd_lines(filename))
-    # even_letters(filename)
+    even_letters(filename)
     # print(average_words(filename))
-    print(field_count("grades_010.csv"))
-    open_file("aasdasdsad")
+    # print(field_count("grades_010.csv"))
+    # open_file("aasdasdsad")
+    # print(field_count("full_grades_100.csv"))
