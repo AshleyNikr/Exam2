@@ -11,11 +11,12 @@ def open_file(filename):
 
 def odd_lines(filename):
     with open(filename) as file:
-        i = 0
+        i = 1
         for line in file:
             if i % 2 != 0:
                 print(line)
             i += 1
+    return i
 if __name__ == "__main__":
     open_file("/data/alice.txt")
-    odd_lines("/data/alice.txt")
+    print(odd_lines("/data/alice.txt"))
