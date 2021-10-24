@@ -21,11 +21,12 @@ def odd_lines(filename):
 def even_letters(filename):
     with open(filename) as file:
         for line in file:
-            even = line[::2]
-            print(even, end="")
+            line = line.strip()
+            print(line[::2], end="")
+
 
 if __name__ == "__main__":
-    filename = "/data/alice_backup.txt"
+    filename = "alice.txt"
     # open_file(filename)
     # print(odd_lines(filename))
     even_letters(filename)
