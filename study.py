@@ -7,10 +7,14 @@ def open_file(filename):
     # print("File closed")
 
     # alternate solution:
-    file = open(filename)
-    print("File open")
-    file.close()
-    print("File closed")
+    try:
+        file = open(filename)
+        print("File open")
+        file.close()
+        print("File closed")
+    except FileNotFoundError:
+        print("File not found:", filename)
+
 
 def odd_lines(filename):
     with open(filename) as file:
@@ -56,3 +60,4 @@ if __name__ == "__main__":
     # even_letters(filename)
     # print(average_words(filename))
     print(field_count("grades_010.csv"))
+    open_file("aasdasdsad")
